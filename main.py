@@ -17,8 +17,8 @@ class Game:
         enemy1 = Enemy((300, 64), screen_width, 3)
         self.enemys.add(enemy1)
 
-        self.current_time = pygame.time.get_ticks() / 50
-        dt =self.current_time - t0
+
+
         self.nr_total_enemy = 0
 
     def collisions(self):
@@ -29,12 +29,11 @@ class Game:
         rand = random.choice(a)
 
         self.score = self.nr_total_enemy - len(self.enemys)
-
+        current_time = pygame.time.get_ticks() / 50
         if current_time % 1.5 == 0:
-            print("baau")
+
             enemy1 = Enemy((300, 64), screen_width, rand)
             self.nr_total_enemy += 1
-            print("nr totael", self.nr_total_enemy)
             self.enemys.add(enemy1)
 
             print("score", self.score)
